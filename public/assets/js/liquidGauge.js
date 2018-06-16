@@ -1,4 +1,6 @@
-d3.select("#fillgauge1").call(d3.liquidfillgauge, 55);
+var cashPer = ((window.cashData[0].amount/100) * window.cashData[0].amount);
+
+d3.select("#fillgauge1").call(d3.liquidfillgauge, cashPer);
 
 d3.select("#fillgauge4").call(d3.liquidfillgauge, 50, {
     circleThickness: 0.15,

@@ -1,5 +1,5 @@
 var exports = module.exports = {}
-
+var db = require("../models");
 
 exports.signup = function(req,res){
 
@@ -15,7 +15,13 @@ exports.signin = function(req,res){
 
 exports.dashboard = function(req,res){
 
-	res.render('index'); 
+  db.Cash.findAll({
+    include: [db.User]
+  }).then(function (dbCash) {
+      res.render('index', {
+        cashResults: JSON.stringify(dbCash, null, 2),
+      });   
+  });
 
 }
 
