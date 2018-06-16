@@ -1,9 +1,10 @@
 /*********************************
 *   Start of Liquid Fill Gauges  *
 ******************************** */
+var cashPer = ((500/100) * window.cashData[0].amount);
 
 // Start of Gauge CSS and Animation Code (Edit Here to change colors and animation settings)
-d3.select("#fillgauge1").call(d3.liquidfillgauge, 55);
+d3.select("#fillgauge1").call(d3.liquidfillgauge, cashPer);
 
 d3.select("#fillgauge4").call(d3.liquidfillgauge, 50, {
   circleColor: "#9ED2DB",
