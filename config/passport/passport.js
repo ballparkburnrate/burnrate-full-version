@@ -6,7 +6,7 @@ var db = require("../../models");
 module.exports = function (passport, user) {
 
   var User = user;
-  console.log(user);
+  //console.log(user);
   var LocalStrategy = require('passport-local').Strategy;
 
 
@@ -38,17 +38,17 @@ module.exports = function (passport, user) {
     },
 
     function (req, email, password, done) {
-      console.log("Debug:", req.body)
+      //console.log("Debug:", req.body)
       //console.log("--------------------------- Debug2")
 
       var generateHash = function (password) {
         return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
       };
-      console.log()
+      //console.log()
       db.User.findOne({ where: { email: email } }).then(function (user) {
-        console.log("DEBUG1")
+        //console.log("DEBUG1")
         if (user) {
-          console.log("Right here!")
+          //console.log("Right here!")
           return done(null, false, { message: 'That email is already taken' });
         }
 

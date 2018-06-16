@@ -51,6 +51,7 @@ module.exports = function (app) {
     });
 
     app.post("/api/incomes", function (req, res) {
+        console.log(req.body);
         db.Income.create(req.body).then(function (dbIncome) {
             res.json(dbIncome);
         });

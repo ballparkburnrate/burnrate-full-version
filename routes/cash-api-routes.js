@@ -18,6 +18,7 @@ module.exports = function (app) {
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Post
         db.Cash.findOne({
+            attributes: ['category', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
             where: {
                 id: req.params.id
             }

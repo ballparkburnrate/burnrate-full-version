@@ -3,6 +3,7 @@
 ******************************** */
 
 // Start of Gauge CSS and Animation Code (Edit Here to change colors and animation settings)
+console.log(window.cashData);
 d3.select("#fillgauge1").call(d3.liquidfillgauge, 55);
 
 d3.select("#fillgauge4").call(d3.liquidfillgauge, 50, {
