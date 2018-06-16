@@ -51,7 +51,7 @@
         textSize: 1, // The relative height of the text to display in the wave circle. 1 = 50%
         displayPercent: true, // If true, a % symbol is displayed after the value.
         textColor: "#9ED2DB", // The color of the value text when the wave does not overlap it.
-        waveTextColor: "#9ED2DB", // The color of the value text when the wave overlaps it.
+        waveTextColor: "#A3DCE6", // The color of the value text when the wave overlaps it.
     };
 
     d3.liquidfillgauge = function(g, value, settings) {

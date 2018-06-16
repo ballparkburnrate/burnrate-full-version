@@ -38,13 +38,13 @@ module.exports = function (app) {
         });
     });
 
-     app.get("/api/incomes/by-category/:id", (req, res) => {
+     app.get("/api/incomes/by-customer/:id", (req, res) => {
         db.Income.findAll({
-            attributes: ['category', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
+            attributes: ['customer', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
             where: {
                 UserId: req.params.id
             },
-            group: ['category']            
+            group: ['customer']            
         }).then(function (dbIncome) {
             res.json(dbIncome);
         });

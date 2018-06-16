@@ -16,7 +16,15 @@ module.exports = function (sequelize, DataTypes) {
         category: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        vendor: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     });
 
     Expense.associate = function(models) {
