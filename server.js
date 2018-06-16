@@ -34,7 +34,7 @@ app.use(passport.session()); // persistent login sessions
 
 //For Handlebars
 app.set('views', './views')
-app.engine('hbs', exphbs({ extname: '.hbs' }));
+app.engine('hbs', exphbs({ extname: '.hbs', defaultLayout: "main"}));
 app.set('view engine', '.hbs');
 
 
@@ -55,7 +55,7 @@ require('./config/passport/passport.js')(passport, db.user);
 
 
 // Static directory
-app.use(express.static("public"));
+app.use('/public', express.static(__dirname + '/public'));
 
 // Routes
 // =============================================================
