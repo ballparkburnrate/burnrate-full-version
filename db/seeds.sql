@@ -110,21 +110,17 @@ VALUES
 -- CASH TABLE
 
 INSERT INTO `burnrate_db`.`Cash`
-(`date`,`amount`,`createdAt`,`updatedAt`,`UserId`)
-VALUES
-(curdate(), 5678, curdate(), curdate(), 1);
+( `date`, `amount`, `createdAt`, `updatedAt`,`UserId`)
+VALUES (curdate(), 500, curdate(), curdate(), 1);
 
 INSERT INTO `burnrate_db`.`Cash`
-(`date`,`amount`,`createdAt`,`updatedAt`,`UserId`)
-VALUES
-(curdate(), 5678, curdate(), curdate(), 2);
+( `date`, `amount`, `createdAt`, `updatedAt`,`UserId`)
+VALUES (curdate(), 1000, curdate(), curdate(), 1);
 
 INSERT INTO `burnrate_db`.`Cash`
-(`date`,`amount`,`createdAt`,`updatedAt`,`UserId`)
-VALUES
-(curdate(), 5678, curdate(), curdate(), 3);
+( `date`, `amount`, `createdAt`, `updatedAt`,`UserId`)
+VALUES (curdate(), 300, curdate(), curdate(), 1);
 
 INSERT INTO `burnrate_db`.`Cash`
-(`date`,`amount`,`createdAt`,`updatedAt`,`UserId`)
-VALUES
-(curdate(), 5678, curdate(), curdate(), 4);
+( `date`, `amount`, `createdAt`, `updatedAt`,`UserId`)
+VALUES (curdate(), 800, curdate(), curdate(), 1);

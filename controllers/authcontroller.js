@@ -22,11 +22,34 @@ exports.dashboard = function (req, res) {
     where: {
       UserId: idUser
     },
-    group: ['UserId']  
+    group: ['UserId']
   }).then(function (dbCash) {
-    res.render('index', {
-      cashResults: JSON.stringify(dbCash, null, 2),
-    });   
+
+    db.Expense.findAll({
+      attributes: ['category', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
+      where: {
+        UserId: idUser
+      },
+      group: ['category']
+    }).then(function (dbExpense) {
+
+
+      db.Income.findAll({
+        attributes: ['customer', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
+        where: {
+          UserId: idUser
+        },
+        group: ['customer']
+      }).then(function (dbIncome) {
+        res.render('index', {
+          cashResults: JSON.stringify(dbCash, null, 2),
+          expenseResult: JSON.stringify(dbExpense, null, 2),
+          incomeResult: JSON.stringify(dbIncome, null, 2)
+        });
+      });
+    });
+
+
   });
 
 }
