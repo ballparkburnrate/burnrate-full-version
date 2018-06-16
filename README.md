@@ -1,2 +1,1 @@
-# burnrate
-Business finance planning app
+# burnrate-backend

@@ -1,0 +1,168 @@
+/*----------------------------------------
+    Main CSS
+------------------------------------------*/
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #9ED2DB;
+}
+
+#main {
+  min-height: calc(100% - 100px);
+  padding-left: 240px;
+  transition: .3s ease all;
+}
+
+.container {
+  padding: 0 0.5rem;
+  margin: 0 auto;
+  max-width: 100% !important;
+  width: 98%;
+}
+
+/*----------------------------------------
+    Page Header and Nav
+------------------------------------------*/
+h1.logo-wrapper {
+  margin: 0;
+}
+
+h1 span.logo-text {
+  font-size: 26px;
+  padding-left: 8px;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+header .brand-logo {
+  margin: 1px 0px;
+  padding: 22px 20px;
+  line-height: 0;
+}
+
+header .brand-logo img {
+  height: 38px;
+  width: 38px;
+  text-align: left;
+}
+
+.nav-color {
+  background: #ADADAD;
+  background: linear-gradient(45deg, #ADADAD 0%, #5E5E5E 100%);
+  box-shadow: 0 6px 20px 0 rgba(173, 173, 173, 0.5);
+}
+
+/*----------------------------------------
+   SideNav
+------------------------------------------*/
+.side-nav {
+  width: 240px;
+  transition: .3s ease all;
+}
+
+.side-nav.native-scroll {
+  overflow-y: scroll !important;
+}
+
+ul.side-nav.leftside-navigation {
+  top: 64px;
+  overflow: hidden;
+  height: 100%;
+}
+
+#left-sidebar-nav {
+  position: fixed;
+  width: 100px;
+  left: 180px;
+  z-index: 999;
+  height: auto;
+}
+.btn {
+  background-color: #ADADAD;
+}
+.btn:hover  {
+  background-color: lightblue !important;
+}
+
+/*----------------------------------------
+   Main Page Content
+------------------------------------------*/
+.card {
+  text-align: center;
+  background: #ADADAD;
+  background: linear-gradient(45deg, #ADADAD 0%, #5E5E5E 100%);
+  box-shadow: 0 6px 20px 0 rgba(173, 173, 173, 0.5);
+}
+
+.card-cashRemaining {
+  
+  padding: 20px 0 0 0;
+  background: #ADADAD;
+  background: linear-gradient(45deg, #ADADAD 0%, #5E5E5E 100%);
+  box-shadow: 0 6px 20px 0 rgba(173, 173, 173, 0.5);
+}
+
+.card-income {
+  padding: 20px 0 0 0;
+  background: #ADADAD;
+  background: linear-gradient(45deg, #ADADAD 0%, #5E5E5E 100%);
+  box-shadow: 0 6px 20px 0 rgba(173, 173, 173, 0.5);
+}
+
+.card-expenses {
+  background: #ADADAD;
+  background: linear-gradient(45deg, #ADADAD 0%, #5E5E5E 100%);
+  box-shadow: 0 6px 20px 0 rgba(173, 173, 173, 0.5);
+}
+
+.card-title {
+  color: white;
+
+}
+
+/*----------------------------------------
+   Input Page Body
+------------------------------------------*/
+
+.card-title {
+  text-align: center;
+  font-weight: 700;
+}
+#submit {
+  width: 200px;
+  
+}
+
+/*----------------------------------------
+   Charts and Graphs CSS
+------------------------------------------*/
+
+/* Liquid Gauge Graphs */
+.liquidFillGaugeText { 
+  font-family: Helvetica; 
+  font-weight: bold; 
+}
+
+/* Morris Expense Donut Chart */
+
+#donut-chart{
+  height: 220px;
+}
+
+/* Area Chart  */
+.morris-hover {
+  text-align: center;
+  color: white;
+}
+text {
+  fill: white;
+}
+.morris-hover-point {
+  color:white !important;
+}
+#linecard {
+  box-shadow: 0 6px 20px 0 rgba(57, 73, 171, 0.5);
+}
