@@ -13,20 +13,24 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DOUBLE,
             allowNull: true
         },
-        category: {
+        customer: {
             type: DataTypes.STRING,
             allowNull: false
-        }
-    });  
-    
-     Income.associate = function(models) {
-         // Associating Author with Posts
-         // When an Author is deleted, also delete any associated Posts
-         Income.belongsTo(models.User, {
-          foreignKey:{
-              allowNull: false
-          }
-         });
-       };
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    });
+
+    Income.associate = function (models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Income.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Income;
 };
