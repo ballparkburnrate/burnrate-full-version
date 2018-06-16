@@ -66,15 +66,32 @@ Morris.Donut({
 /*********************************
 *  Start of Area Graph   *
 ******************************** */
-var YourList =[
+var startingCash = window.cashData.amount;
+var YourList = [];
 
-  ];
-  for (let i = 0; i < 11; i++) {
-    month = moment().get('month')+i;
-    moment().set('month', month);
-  
-    YourList.push(month);
-  }
+let totalExpenses = 0;
+for (const expense of window.expenseData) {
+  totalExpenses += expense.amount;
+}
+
+let totalIncome = 0;
+for (const income of window.incomeData) {
+  totalIncome += income.amount;
+}
+
+for (let i = 0; i < 11; i++) {
+  var currentDate = moment();
+  currentDate.set('month', currentDate.get('month') + i);
+  var monthName = currentDate.format('MMM');
+
+  console.log(monthName);
+  // Do calculations
+  startingCash += totalIncome;
+  startingCash -= totalExpenses;
+  YourList.push([monthName, startingCash]);
+}
+
+console.log("Start",startingCash,"exp",totalExpenses,"inc",totalIncome);
 
 var myJSON = [];
 $.each(YourList, function (i, item) {
