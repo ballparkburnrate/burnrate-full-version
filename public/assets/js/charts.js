@@ -1,16 +1,52 @@
 /*********************************
 *   Start of Liquid Fill Gauges  *
 ******************************** */
+var startingCash = window.cashData.amount;
+var YourList = [];
+console.log("Starting Cash: ",startingCash);
 
+<<<<<<< HEAD
 // var cashPer = ((500/100) * window.cashData[0].amount);
 var cashPer = ((4000/window.cashData.amount) * 100);
 console.log(window.cashData.amount);
 console.log(cashPer);
+=======
+let totalExpenses = 0;
+for (const expense of window.expenseData) {
+  totalExpenses += expense.amount;
+}
+console.log(totalExpenses);
+let totalIncome = 0;
+for (const income of window.incomeData) {
+  totalIncome += income.amount;
+}
+
+for (let i = 0; i < 11; i++) {
+  var currentDate = moment();
+  currentDate.set('month', currentDate.get('month') + i);
+  var monthName = currentDate.format('MMM');
+
+  console.log(monthName);
+  // Do calculations
+  startingCash += totalIncome;
+  startingCash -= totalExpenses;
+  YourList.push([monthName, startingCash]);
+}
+
+console.log("Cash Remaining in 12 Months: ",startingCash,"Monthly Expenses: ",totalExpenses,"Monthly Income: ",totalIncome);
+
+var remainingCash = window.cashData.amount - totalExpenses;
+console.log("remainingCash: " + remainingCash);
+var remainingCashPer = ((remainingCash/window.cashData.amount) * 100);
+console.log(window.cashData.amount);
+console.log(remainingCashPer);
+var incomeCashPer = ((totalIncome/window.cashData.amount) * 100);
+>>>>>>> 817d4e9925a2789d5a17564291ba3cdbf87f0e7a
 
 // Start of Gauge CSS and Animation Code (Edit Here to change colors and animation settings)
-d3.select("#fillgauge1").call(d3.liquidfillgauge, cashPer);
+d3.select("#fillgauge1").call(d3.liquidfillgauge, remainingCashPer);
 
-d3.select("#fillgauge4").call(d3.liquidfillgauge, 50, {
+d3.select("#fillgauge4").call(d3.liquidfillgauge, incomeCashPer, {
   circleColor: "#9ED2DB",
   textColor: "#9ED2DB",
   waveTextColor: "#A3DCE6",
@@ -43,16 +79,26 @@ d3.select("#fillgauge5").call(d3.liquidfillgauge, 60.44, {
 /*********************************
 *  Start of Morris Donut Chart   *
 ******************************** */
+var expensesPer = window.expenseData[0].amount
+console.log(expensesPer);
 
+for (var e = 0; e < window.expenseData.length; e++) {
+  console.log(window.expenseData[e].amount);
+}
+var expenseArray = [];
+
+for (let i = 0; i < window.expenseData.length; i++) {
+  const data = window.expenseData[i];
+  expenseArray.push({
+  label:data.category,
+  value:data.amount})
+  
+};
+console.log(expenseArray);
 Morris.Donut({
     element: 'donut-chart',
     // Array that holds info for values and categories
-    data: [
-      {label: "Employees", value: 30},
-      {label: "Rent", value: 50},
-      {label: "Gas", value: 35},
-      {label: "Miscellaneous", value: 45}
-    ],
+    data: expenseArray,
     // Change Color or inside Text
     labelColor: '#fff',
     // Change Colors of each Bar
@@ -66,11 +112,6 @@ Morris.Donut({
 /*********************************
 *  Start of Area Graph   *
 ******************************** */
-var YourList ={
-  1:["Jan",20],
-  2:["Feb",15],
-  3:["Mar",10],
-};
 
 var myJSON = [];
 $.each(YourList, function (i, item) {

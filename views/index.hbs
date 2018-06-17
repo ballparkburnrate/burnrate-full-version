@@ -236,23 +236,22 @@
             <div id="expenses" class="modal">
               <div class="modal-content">
                 <h4>Add New</h4>
-                <form action="">
+                <form method ="post" action="/api/expenses">
                   <p>Expense Amount ($):
-                    <input id="expenseamt" type="text" placeholder="10000">
+                    <input name="expenseamt" type="text" placeholder="10000">
                   </p>
                   <p>Expense Date:
-                    <input id="expensedate" type="date" placeholder="">
+                    <input name="expensedate" type="date" placeholder="">
                   </p>
                   <p>Vendor:
-                    <input id="vendor" type="text" placeholder="Amazon">
+                    <input name="vendor" type="text" placeholder="Amazon">
                   </p>
                   <p>Expense Description:
-                    <input id="expensedesc" type="text" placeholder="Web Services">
+                    <input name="expensedesc" type="text" placeholder="Web Services">
                   </p>
-                  <p>Is this a recurring expense? If so, enter the next billing date.
-                    <input id="expensenxtdate" type="date" placeholder="">
+                  <p>Expense Category:
+                    <input name="expensecat" type="text" placeholder="Misc">
                   </p>
-
                   <input href="#!" id="expensebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
                 </form>
               </div>
@@ -263,21 +262,18 @@
             <div id="income" class="modal">
               <div class="modal-content">
                   <h4>Add New</h4>
-                <form action="">
+                <form method = "post" action="/api/incomes">
                   <p>Income Amount ($):
-                    <input id="incomeamt" type="text" placeholder="10000">
+                    <input name="incomeamt" type="text" placeholder="10000">
                   </p>
                   <p>Income Date:
-                    <input id="incomedate" type="date" placeholder="">
+                    <input name="incomedate" type="date" placeholder="">
                   </p>
                   <p>Customer:
-                    <input id="customer" type="text" placeholder="Netflix">
+                    <input name="customer" type="text" placeholder="Netflix">
                   </p>
                   <p>Income Description:
-                    <input id="incomedesc" type="text" placeholder="Web Services">
-                  </p>
-                  <p>Is this a recurring income source? If so, enter the next billing date.
-                    <input id="incomenxtdate" type="date" placeholder="">
+                    <input name="incomedesc" type="text" placeholder="Web Services">
                   </p>
                   <input href="#!" id="incomebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
                 </form>

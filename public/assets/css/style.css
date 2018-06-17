@@ -35,6 +35,9 @@ h1 span.logo-text {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.2s linear;
+  font-family: 'Faster One', cursive;
+  color: #9ED2DB;
+  font-size: 40px;
 }
 
 header .brand-logo {
