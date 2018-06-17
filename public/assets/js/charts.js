@@ -75,15 +75,23 @@ d3.select("#fillgauge5").call(d3.liquidfillgauge, 60.44, {
 var expensesPer = window.expenseData[0].amount
 console.log(expensesPer);
 
+for (var e = 0; e < window.expenseData.length; e++) {
+  console.log(window.expenseData[e].amount);
+}
+var expenseArray = [];
+
+for (let i = 0; i < window.expenseData.length; i++) {
+  const data = window.expenseData[i];
+  expenseArray.push({
+  label:data.category,
+  value:data.amount})
+  
+};
+console.log(expenseArray);
 Morris.Donut({
     element: 'donut-chart',
     // Array that holds info for values and categories
-    data: [
-      {label: "Employees", value: window.expenseData[0].amount},
-      {label: "Rent", value: window.expenseData[2].amount},
-      {label: "Food", value: window.expenseData[1].amount},
-      {label: "Training", value: window.expenseData[3].amount}
-    ],
+    data: expenseArray,
     // Change Color or inside Text
     labelColor: '#fff',
     // Change Colors of each Bar
