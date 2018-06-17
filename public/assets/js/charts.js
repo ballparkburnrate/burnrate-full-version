@@ -3,8 +3,8 @@
 ******************************** */
 
 // var cashPer = ((500/100) * window.cashData[0].amount);
-var cashPer = ((4000/window.cashData[0].amount) * 100);
-console.log(window.cashData[0].amount);
+var cashPer = ((4000/window.cashData.amount) * 100);
+console.log(window.cashData.amount);
 console.log(cashPer);
 
 // Start of Gauge CSS and Animation Code (Edit Here to change colors and animation settings)
