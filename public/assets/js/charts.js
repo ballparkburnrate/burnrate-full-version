@@ -68,6 +68,7 @@ Morris.Donut({
 ******************************** */
 var startingCash = window.cashData.amount;
 var YourList = [];
+console.log("Starting Cash: ",startingCash);
 
 let totalExpenses = 0;
 for (const expense of window.expenseData) {
@@ -91,7 +92,7 @@ for (let i = 0; i < 11; i++) {
   YourList.push([monthName, startingCash]);
 }
 
-console.log("Start",startingCash,"exp",totalExpenses,"inc",totalIncome);
+console.log("Cash Remaining in 12 Months: ",startingCash,"Monthly Expenses: ",totalExpenses,"Monthly Income: ",totalIncome);
 
 var myJSON = [];
 $.each(YourList, function (i, item) {
