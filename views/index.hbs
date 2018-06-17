@@ -236,7 +236,7 @@
             <div id="expenses" class="modal">
               <div class="modal-content">
                 <h4>Add New</h4>
-                <form action="">
+                <form method ="post" action="/api/expenses">
                   <p>Expense Amount ($):
                     <input id="expenseamt" type="text" placeholder="10000">
                   </p>
@@ -249,10 +249,9 @@
                   <p>Expense Description:
                     <input id="expensedesc" type="text" placeholder="Web Services">
                   </p>
-                  <p>Is this a recurring expense? If so, enter the next billing date.
-                    <input id="expensenxtdate" type="date" placeholder="">
+                  <p>Expense Category:
+                    <input id="expensecat" type="text" placeholder="Misc">
                   </p>
-
                   <input href="#!" id="expensebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
                 </form>
               </div>
@@ -275,9 +274,6 @@
                   </p>
                   <p>Income Description:
                     <input id="incomedesc" type="text" placeholder="Web Services">
-                  </p>
-                  <p>Is this a recurring income source? If so, enter the next billing date.
-                    <input id="incomenxtdate" type="date" placeholder="">
                   </p>
                   <input href="#!" id="incomebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
                 </form>
