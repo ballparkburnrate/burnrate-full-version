@@ -51,7 +51,17 @@ module.exports = function (app) {
     });
 
     app.post("/api/expenses", function (req, res) {
-        db.Expense.create(req.body).then(function (dbExpense) {
+        var newExpense = {
+            isRecurring: true,
+            date: req.body.expensedate,
+            amount: req.body.expenseamt,
+            category: req.body.expensecat,
+            vendor: req.body.vendor,
+            description: req.body.expensedesc,
+            UserId: req.user.id
+        }
+        db.Expense.create(newExpense).then(function (dbExpense) {
+            console.log("New expense added.")
             res.json(dbExpense);
         });
     });
