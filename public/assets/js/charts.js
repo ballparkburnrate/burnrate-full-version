@@ -5,12 +5,6 @@ var startingCash = window.cashData.amount;
 var YourList = [];
 console.log("Starting Cash: ",startingCash);
 
-<<<<<<< HEAD
-// var cashPer = ((500/100) * window.cashData[0].amount);
-var cashPer = ((4000/window.cashData.amount) * 100);
-console.log(window.cashData.amount);
-console.log(cashPer);
-=======
 let totalExpenses = 0;
 for (const expense of window.expenseData) {
   totalExpenses += expense.amount;
@@ -41,7 +35,6 @@ var remainingCashPer = ((remainingCash/window.cashData.amount) * 100);
 console.log(window.cashData.amount);
 console.log(remainingCashPer);
 var incomeCashPer = ((totalIncome/window.cashData.amount) * 100);
->>>>>>> 817d4e9925a2789d5a17564291ba3cdbf87f0e7a
 
 // Start of Gauge CSS and Animation Code (Edit Here to change colors and animation settings)
 d3.select("#fillgauge1").call(d3.liquidfillgauge, remainingCashPer);
