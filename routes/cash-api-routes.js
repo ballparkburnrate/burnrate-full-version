@@ -38,7 +38,11 @@ module.exports = function (app) {
     });
 
     app.post("/api/cash", function (req, res) {
-        db.Cash.create(req.body).then(function (dbCash) {
+        var newCash = {
+            UserId: req.user.id,
+            amount: req.body.cashamt
+        }
+        db.Cash.create(newCash).then(function (dbCash) {
             res.json(dbCash);
         });
     });
