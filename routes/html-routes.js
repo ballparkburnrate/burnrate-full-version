@@ -15,7 +15,8 @@ module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
     //res.sendFile(path.join(__dirname, "../public/xxxxx.html"));
-    res.send('Welcome to Passport with Sequelize');
+    //res.send('Welcome to Passport with Sequelize');
+    res.redirect("/index")
   });
 
   // cms route loads cms.html
