@@ -29,7 +29,7 @@ for (let i = 0; i < 11; i++) {
 
 console.log("Cash Remaining in 12 Months: ",startingCash,"Monthly Expenses: ",totalExpenses,"Monthly Income: ",totalIncome);
 
-var remainingCash = window.cashData.amount - totalExpenses;
+var remainingCash = window.cashData.amount - totalExpenses + totalIncome;
 console.log("remainingCash: " + remainingCash);
 var remainingCashPer = ((remainingCash/window.cashData.amount) * 100);
 console.log(window.cashData.amount);
