@@ -64,6 +64,8 @@ require("./routes/expense-api-routes.js")(app);
 require("./routes/income-api-routes.js")(app);
 require("./routes/cash-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
+require("./routes/new-api-routes.js")(app);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

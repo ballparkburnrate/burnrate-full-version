@@ -1,21 +1,71 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title></title>
+  <meta charset="UTF-8">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link href="/public/assets/css/materialize.css" type="text/css" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+  <!--Morris Chart.js-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+  <!--CSS-->
+  <link href="/public/assets/css/style.css" type="text/css" rel="stylesheet">
+
+  <title>Sign In</title>
 </head>
+
 <body>
-<form id="signup" name="signup" method="post" action="/signup">
-  <label for="email">Email Address</label>
-  <input class="text" name="email" type="email" />
-  <label for="firstname">Firstname</label>
-  <input name="firstname" type="text" />
-  <label for="lastname">Lastname</label>
-  <input name="lastname" type="text" />
-  <label for="password">Password</label>
-  <input name="password" type="password" />
-  <input class="btn" type="submit" value="Sign Up" />
-</form>
+  <header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+      <nav class="nav-color">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <h1 class="logo-wrapper">
+                <a href="index.html" class="brand-logo center">
+                  <span class="logo-text">Burnrate</span>
+                </a>
+              </h1>
+            </li>
+          </ul>
+          <ul class="right">
+
+            <li>
+              <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                <i class="material-icons">settings_overscan</i>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end header nav-->
+  </header>
+  <br/>
+  <section id="content">
+    <form id="signup" name="signup" method="post" action="/signup">
+      <label for="email">Email Address</label>
+      <input class="text" name="email" type="email" />
+      <label for="firstname">Firstname</label>
+      <input name="firstname" type="text" />
+      <label for="lastname">Lastname</label>
+      <input name="lastname" type="text" />
+      <label for="password">Password</label>
+      <input name="password" type="password" />
+      <input class="btn" type="submit" value="Sign Up" />
+    </form>
+  </section>
 
 </body>
+
 </html>

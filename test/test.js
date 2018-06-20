@@ -166,25 +166,6 @@ describe('User', function () {
                 });
         });
     });
-
-
-
-
-
-
-
-
-
-    // describe('Get All User', function () {
-    //     it('responds with status 200', function (done) {
-    //         chai.request("http://localhost:3000")
-    //             .get('/api/users')
-    //             .end(function (err, res) {
-    //                 expect(res).to.have.status(200);
-    //                 done();
-    //             });
-    //     });
-    // });
 });
 
 

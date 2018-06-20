@@ -1,16 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
+  <meta charset="UTF-8">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link href="/public/assets/css/materialize.css" type="text/css" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+  <!--Morris Chart.js-->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+  <!--CSS-->
+  <link href="/public/assets/css/style.css" type="text/css" rel="stylesheet">
+
+  <title>Sign In</title>
 </head>
+
 <body>
-<form id="signin" name="signin" method="post" action="signin">
-  <label for="email">Email Address</label>
-  <input id="email" class="text" name="email" type="text" />
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" />
-  <input id="btn" class="btn" type="submit" value="Sign In" />
-</form>
+  <header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+      <nav class="nav-color">
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <h1 class="logo-wrapper">
+                <a href="index.html" class="brand-logo center">
+                  <span class="logo-text">Burnrate</span>
+                </a>
+              </h1>
+            </li>
+          </ul>
+          <ul class="right">
+
+            <li>
+              <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                <i class="material-icons">settings_overscan</i>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end header nav-->
+  </header>
+  <br/>
+  <section id="content">
+    <!-- END HEADER -->
+    <form id="signin" name="signin" method="post" action="signin">
+      <label for="email">Email Address</label>
+      <input id="email" class="text" name="email" type="text" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <input id="btn" class="btn" type="submit" value="Sign In" />
+    </form>
+  </section>
 
 </body>
+
 </html>
