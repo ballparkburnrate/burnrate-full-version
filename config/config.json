@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "edwardhn",
+    "password": "",
     "database": "burnrate_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "edwardhn",
+    "password": "",
     "database": "burnrate_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
