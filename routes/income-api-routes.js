@@ -64,7 +64,7 @@ module.exports = function (app) {
 
         db.Income.create(newIncome).then(function (dbIncome) {
             console.log("New income added.")
-            res.json(dbIncome);
+            res.redirect("/index");
         });
     });
 };

@@ -62,7 +62,7 @@ module.exports = function (app) {
         }
         db.Expense.create(newExpense).then(function (dbExpense) {
             console.log("New expense added.")
-            res.json(dbExpense);
+            res.redirect("/index");
         });
     });
 };
