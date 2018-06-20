@@ -52,6 +52,7 @@ module.exports = function (app) {
 
     app.post("/api/incomes", function (req, res) {
         console.log(req.body);
+        console.log(req.user);
         var newIncome = {
             isRecurring: true,
             date: req.body.incomedate,
@@ -59,7 +60,8 @@ module.exports = function (app) {
             customer: req.body.customer,
             description: req.body.incomedesc,
             UserId: req.user.id
-        }
+        };
+
         db.Income.create(newIncome).then(function (dbIncome) {
             console.log("New income added.")
             res.json(dbIncome);
