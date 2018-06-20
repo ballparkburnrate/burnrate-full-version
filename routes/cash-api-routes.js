@@ -43,7 +43,7 @@ module.exports = function (app) {
             amount: req.body.cashamt
         }
         db.Cash.create(newCash).then(function (dbCash) {
-            res.json(dbCash);
+            res.redirect("/index");
         });
     });
 };
