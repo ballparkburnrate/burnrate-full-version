@@ -1,6 +1,6 @@
 
 function initNews() {
-    var newAPI = "http://localhost:3000/api/new";
+    var newAPI = "../api/new";
     $.getJSON(newAPI, {
         format: "json"
     })
