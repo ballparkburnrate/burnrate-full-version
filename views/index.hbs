@@ -177,6 +177,13 @@
             <form action="">
               <h4>Expenses</h4>
               <table id="exptbl">
+                  <ul>
+                    {{#each dbExpense}}
+                      <p>
+                        Category: {{category}} Expense: $ {{amount}}
+                      </p>         
+                    {{/each}}
+                  </ul>
 
               </table>
               <p></p>

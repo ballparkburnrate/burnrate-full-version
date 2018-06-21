@@ -44,6 +44,7 @@ exports.dashboard = function (req, res) {
         res.render('index', {
           cashResults: JSON.stringify(dbCash, null, 2),
           expenseResult: JSON.stringify(dbExpense, null, 2),
+          dbExpense: dbExpense,
           incomeResult: JSON.stringify(dbIncome, null, 2)
         });
       });
