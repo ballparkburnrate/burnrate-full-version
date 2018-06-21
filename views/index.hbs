@@ -181,8 +181,7 @@
                     {{#each dbExpense}}
                       <p>
                         Category: {{category}} Cost: $ {{amount}}
-                        <form action="/api/expenses/delete/{{this.id}}" method="POST">
-                        <input name="amount" type="hidden">
+                        <form action="/api/expenses/delete/{{id}}" method="POST">
                         <button class="modal-close waves-effect waves-light btn-flat" type="submit">Delete Expense!</button>
                         </form>
                       </p>         
