@@ -24,7 +24,9 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbExpense) {
+            console.log(dbExpense);
             res.json(dbExpense);
+            
         });
     });
 
@@ -65,4 +67,15 @@ module.exports = function (app) {
             res.redirect("/index");
         });
     });
+
+    app.delete("/api/expenses/:id", function(req, res) {
+        db.Expense.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+          .then(function(dbExpense) {
+            res.json(dbExpense);
+          });
+      });
 };

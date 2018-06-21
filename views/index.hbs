@@ -177,13 +177,34 @@
             <form action="">
               <h4>Expenses</h4>
               <table id="exptbl">
-                  <ul>
+                <thead>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Id</th>
+                <th></th>
+              </thead>
+              <tbody>
+                {{#each dbExpense}}
+                <tr>
+                  <td>{{category}}</td>
+                  <td>{{amount}}</td>
+                  <td>{{id}}</td>
+                  <td> <button data-movieid="{{this.id}}" class="delmovie">Delete</button> </td>
+                  <!--property value here-->
+                </tr>
+                {{/each}}
+              </tbody>
+                  {{!-- <ul>
                     {{#each dbExpense}}
                       <p>
-                        Category: {{category}} Expense: $ {{amount}}
-                      </p>         
+                        Category: {{category}} 
+                      </p>  
+                      <p>
+                        Expense: $ {{amount}}
+                      </p>
+                       <button data-movieid="{{this.id}}" class="delmovie">Delete</button>       
                     {{/each}}
-                  </ul>
+                  </ul> --}}
 
               </table>
               <p></p>

@@ -67,4 +67,16 @@ module.exports = function (app) {
             res.redirect("/index");
         });
     });
+
+
+    app.delete("/api/incomes/:id", function(req, res) {
+        db.Income.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+          .then(function(dbIncome) {
+            res.json(dbIncome);
+          });
+      });
 };
