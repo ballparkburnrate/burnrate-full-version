@@ -65,4 +65,18 @@ module.exports = function (app) {
             res.redirect("/index");
         });
     });
+
+
+    app.post("/api/expenses/delete/:id", function (req, res) {
+
+        db.Expense.destroy({
+            where: {
+                id: req.body.id
+              }
+        }).then(function (dbExpense) {
+            console.log("Expense Deleted.")
+            res.redirect("/index");
+        });
+    });
 };
+

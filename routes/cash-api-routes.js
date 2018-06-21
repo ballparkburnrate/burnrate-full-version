@@ -46,4 +46,19 @@ module.exports = function (app) {
             res.redirect("/index");
         });
     });
+
+    app.post("/api/cash/update/:id", function(req, res) {
+
+        db.Cash.update({
+            attributes: ['UserId', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
+            amount: req.body.amount
+          }, {
+            where: {
+                UserId: req.user.id
+            }
+        }).then(function(dbCash) {
+            console.log("Updated Starting Cash");
+            res.json(dbCash);
+        });
+    });  
 };
