@@ -136,9 +136,9 @@
             <p>Starting Cash Amount</p>
             <div class="card-panel">
               <div class="card-content">
-                <form name="cash" method ="post" action="/api/cash">
-                  <input name="cashamt" type="text" placeholder="100000">
-                  <input href="#!" id="cashbtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
+                <form action="/api/cash/update{{this.id}}" method="POST">
+                  <input name="amount" type="text" placeholder="100000">
+                  <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
                 </form>
               </div>
             </div>
