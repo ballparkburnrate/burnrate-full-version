@@ -140,3 +140,27 @@ var bar_chart = Morris.Area({
 $(document).ready(function(){
   $('.modal').modal();
 });
+
+/*********************************
+*  Delete Expense *
+******************************** */
+
+$(document).ready(function() {
+
+  $("#deleteExpense").click(function (event) {
+    console.log("button");
+    event.preventDefault();   
+  
+    var id = $(this).data("id");
+  
+    $.ajax("/api/expenses/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+});
+

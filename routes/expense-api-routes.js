@@ -5,12 +5,12 @@ module.exports = function (app) {
         // Here we add an "include" property to our options in our findAll query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Post
-        console.log(req);
+        //console.log(req);
 
         db.Expense.findAll({
             include: [db.User]
         }).then(function (dbExpense) {
-            console.log(dbExpense);
+            //console.log(dbExpense);
             res.json(dbExpense);
         });
     });
@@ -24,7 +24,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbExpense) {
-            console.log(dbExpense);
+            //console.log(dbExpense);
             res.json(dbExpense);
             
         });
@@ -69,6 +69,7 @@ module.exports = function (app) {
     });
 
     app.delete("/api/expenses/:id", function(req, res) {
+        console.log("ID *******",req.params.id);
         db.Expense.destroy({
           where: {
             id: req.params.id

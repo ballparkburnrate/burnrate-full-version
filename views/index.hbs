@@ -174,38 +174,27 @@
         <!-- Table Modal -->
         <div id="browse" class="modal">
           <div class="modal-content">
-            <form action="">
+            {{!-- <form action=""> --}}
               <h4>Expenses</h4>
               <table id="exptbl">
                 <thead>
                 <th>Category</th>
                 <th>Amount</th>
-                <th>Id</th>
+                <th>Date</th>
                 <th></th>
               </thead>
               <tbody>
-                {{#each dbExpense}}
+                {{#each dbExpenseByUser}}
                 <tr>
                   <td>{{category}}</td>
                   <td>{{amount}}</td>
-                  <td>{{id}}</td>
-                  <td> <button data-movieid="{{this.id}}" class="delmovie">Delete</button> </td>
-                  <!--property value here-->
+                  <td>{{date}}</td>
+                  <td>  
+                    <button data-id="{{this.id}}" id="deleteExpense">Delete</button> 
+                    </td>
                 </tr>
                 {{/each}}
               </tbody>
-                  {{!-- <ul>
-                    {{#each dbExpense}}
-                      <p>
-                        Category: {{category}} 
-                      </p>  
-                      <p>
-                        Expense: $ {{amount}}
-                      </p>
-                       <button data-movieid="{{this.id}}" class="delmovie">Delete</button>       
-                    {{/each}}
-                  </ul> --}}
-
               </table>
               <p></p>
               <h4>Income</h4>
@@ -213,7 +202,7 @@
 
               </table>
               <input href="#!" id="itblbtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
-            </form>
+            {{!-- </form> --}}
           </div>
         </div>
 

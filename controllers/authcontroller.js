@@ -33,7 +33,6 @@ exports.dashboard = function (req, res) {
       group: ['category']
     }).then(function (dbExpense) {
 
-
       db.Income.findAll({
         attributes: ['customer', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
         where: {
@@ -41,11 +40,27 @@ exports.dashboard = function (req, res) {
         },
         group: ['customer']
       }).then(function (dbIncome) {
-        res.render('index', {
-          cashResults: JSON.stringify(dbCash, null, 2),
-          expenseResult: JSON.stringify(dbExpense, null, 2),
-          dbExpense: dbExpense,
-          incomeResult: JSON.stringify(dbIncome, null, 2)
+
+        db.Expense.findAll({
+          where: {
+            UserId: idUser
+          }
+        }).then(function (dbExpenseByUser) {
+
+          db.Income.findAll({
+            where: {
+              UserId: idUser
+            }
+          }).then(function (dbIncomeByUser) {            
+
+            res.render('index', {
+              cashResults: JSON.stringify(dbCash, null, 2),
+              expenseResult: JSON.stringify(dbExpense, null, 2),
+              incomeResult: JSON.stringify(dbIncome, null, 2),
+              dbExpenseByUser: dbExpenseByUser,                   
+              dbIncomeByUser: dbIncomeByUser
+            });
+          });
         });
       });
     });
