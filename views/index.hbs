@@ -136,32 +136,27 @@
             <p>Starting Cash Amount</p>
             <div class="card-panel">
               <div class="card-content">
-                              {{!-- <table id="cashtbl">
+                              <table id="cashtbl">
                                 <thead>
                                   <th>Starting Cash Amount</th>
                                   <th>Date</th>
                                   <th></th>
                                 </thead>
                                 <tbody>
-                                  {{#each dbExpenseByUser}}
+                                  {{#dbCashByUser}}
                                   <tr>
-                                    <td>{{category}}</td>
                                     <td>${{amount}}</td>
                                     <td>{{date}}</td>
-                                    <td>
-                                      <form action="/api/expenses/{{id}}" method="POST">
-                                        <input type="hidden">
-                                        <button>Delete</button>
-                                      </form>
-                                    </td>
                                   </tr>
-                                  {{/each}}
+                                    <tr>
+                                      <form action="/api/cash/update/{{id}}" method="POST">
+                                        <input name="amount" type="text" placeholder="Change your Cash Starting Amount">
+                                        <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
+                                      </form>
+                                    </tr>
+                                  {{/dbCashByUser}}
                                 </tbody>
-                              </table> --}}
-                <form action="/api/cash/update/{{id}}" method="POST">
-                  <input name="amount" type="text" placeholder="100000">
-                  <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
-                </form>
+                              </table>
               </div>
             </div>
           </div>

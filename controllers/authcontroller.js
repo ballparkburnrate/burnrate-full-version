@@ -51,19 +51,28 @@ exports.dashboard = function (req, res) {
             where: {
               UserId: idUser
             }
-          }).then(function (dbIncomeByUser) {            
+          }).then(function (dbIncomeByUser) { 
+            
+            db.Cash.findAll({
+              where: {
+                UserId: idUser
+              }
+            }).then(function (dbCashByUser) { 
 
             res.render('index', {
               cashResults: JSON.stringify(dbCash, null, 2),
               expenseResult: JSON.stringify(dbExpense, null, 2),
               incomeResult: JSON.stringify(dbIncome, null, 2),
               dbExpenseByUser: dbExpenseByUser,                   
-              dbIncomeByUser: dbIncomeByUser
+              dbIncomeByUser: dbIncomeByUser,
+              dbCashByUser: dbCashByUser
+
             });
           });
         });
       });
     });
+  });
 
 
   });
