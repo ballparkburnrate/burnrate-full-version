@@ -90,6 +90,12 @@ ul.side-nav.leftside-navigation {
   background-color: lightblue !important;
 }
 
+.nav-text {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 /*----------------------------------------
    Main Page Content
 ------------------------------------------*/

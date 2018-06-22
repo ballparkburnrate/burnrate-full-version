@@ -1,0 +1,58 @@
+<body>
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="nav-color">
+                <div class="nav-wrapper">
+                    <ul>
+                        <li>
+                            <h1 class="logo-wrapper">
+                                <a href="index.html" class="brand-logo center">
+                                    <span class="logo-text">Burnrate</span>
+                                </a>
+                            </h1>
+                        </li>
+                    </ul>
+                    <ul class="right">
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                                <i class="material-icons">settings_overscan</i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+    <br/>
+    <section id="content">
+        <form action="/api/datainput" method="POST">
+            <h4>Please Enter your starting cash.</h4>
+            <p>Starting Cash Amount ($);
+            <input name="amount" type="text" placeholder="1000000">
+            </p>
+            <h4>Please enter a starting expense</h4>
+            <p>(More can be added later)</p>
+            <p>Expense Amount ($):
+                <input name="expenseamt" type="text" placeholder="10000">
+            </p>
+            <p>Expense Date:
+                <input name="expensedate" type="date" placeholder="">
+            </p>
+            <p>Vendor:
+                <input name="vendor" type="text" placeholder="My Company">
+            </p>
+            <p>Expense Description:
+                <input name="expensedesc" type="text" placeholder="Web Services">
+            </p>
+            <p>Expense Category:
+                <input name="expensecat" type="text" placeholder="Misc">
+            </p>
+            <button class="btn waves-effect waves-light grey lighten-1" type="submit">Submit!</button>
+        </form>
+    </section>
+
+</body>

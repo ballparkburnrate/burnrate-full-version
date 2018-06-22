@@ -40,7 +40,7 @@ module.exports = function (app) {
     app.post("/api/cash", function (req, res) {
         var newCash = {
             UserId: req.user.id,
-            amount: req.body.cashamt
+            amount: req.body.amount
         }
         db.Cash.create(newCash).then(function (dbCash) {
             res.redirect("/index");
@@ -60,4 +60,26 @@ module.exports = function (app) {
             res.json(dbCash);
         });
     });  
+
+    app.post("/api/datainput", function (req, res) {
+        var newCash = {
+            UserId: req.user.id,
+            amount: req.body.amount
+        }
+        var newExpense = {
+            isRecurring: true,
+            date: req.body.expensedate,
+            amount: req.body.expenseamt,
+            category: req.body.expensecat,
+            vendor: req.body.vendor,
+            description: req.body.expensedesc,
+            UserId: req.user.id
+        }
+        db.Cash.create(newCash).then(function (dbCash) {
+            db.Expense.create(newExpense).then(function (dbExpense) {
+                res.redirect("/index");
+            });
+        });
+    });
 };
+

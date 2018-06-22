@@ -13,6 +13,12 @@ exports.signin = function (req, res) {
 
 }
 
+exports.datainput = function (req, res) {
+
+  res.render('datainput');
+
+}
+
 exports.dashboard = function (req, res) {
 
   var idUser = req.user.id;

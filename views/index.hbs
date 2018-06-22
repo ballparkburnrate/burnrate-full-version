@@ -8,7 +8,7 @@
 
 <!-- START HEADER -->
 <header id="header" class="page-topbar">
-  <!-- start header nav-->
+  <!-- START HEADER NAV-->
   <div class="navbar-fixed">
     <nav class="nav-color">
       <div class="nav-wrapper">
@@ -33,7 +33,7 @@
       </div>
     </nav>
   </div>
-  <!-- end header nav-->
+  <!-- END HEADER NAV-->
 </header>
 <!-- END HEADER -->
 
@@ -47,7 +47,7 @@
         <li>
           <a class="waves-effect waves-dark btn modal-trigger" href="#cash">
             <i class="material-icons">attach_money</i>
-            <span class="waves-effect waves-block waves-light nav-text">Cash</span>
+            <span class="waves-effect waves-block waves-light nav-text">Edit Cash</span>
           </a>
         </li>
 
@@ -60,19 +60,13 @@
         <li>
           <a class="waves-effect waves-dark btn modal-trigger" href="#expenses">
             <i class="material-icons">credit_card</i>
-            <span class="waves-effect waves-block waves-light nav-text">Expenses</span>
+            <span class="nav-text">Edit Expense</span>
           </a>
         </li>
         <li>
           <a class="waves-effect waves-dark btn modal-trigger" href="#income">
             <i class="material-icons">attach_money</i>
-            <span class="waves-effect waves-block waves-light nav-text">Income</span>
-          </a>
-        </li>
-        <li>
-          <a class="waves-effect waves-dark btn modal-trigger" href="#browse">
-            <i class="material-icons">list</i>
-            <span class="waves-effect waves-block waves-light nav-text">Browse Data</span>
+            <span class="waves-effect waves-block waves-light nav-text">Edit Income</span>
           </a>
         </li>
 
@@ -82,7 +76,7 @@
 
     <!-- START CONTENT -->
     <section id="content">
-      <!--start container-->
+      <!--START CONTAINER-->
       <div class="container">
         <div class="section">
           <div class="row">
@@ -115,10 +109,6 @@
             <div class="col s12">
               <div class="card" id="linecard">
                 <div class="card-image" id="line">
-                  <!-- <img src="../VC2_final_branding1.png">
-                        <a class="btn-floating halfway-fab waves-effect waves-light red">
-                          <i class="material-icons">x</i>
-                        </a> -->
                 </div>
                 <div class="card-content">
                   <span class="card-title">Ballpark Cash Timeline</span>
@@ -128,43 +118,48 @@
             </div>
           </div>
         </div>
-        <!-- The Modals -->
 
-                <!-- Cash Info -->
+        <!-- START OF MODALS -->
+
+        <!-- START CASH EDIT/INFO -->
         <div id="cash" class="modal">
           <div class="modal-content">
             <p>Starting Cash Amount</p>
             <div class="card-panel">
               <div class="card-content">
-                              <table id="cashtbl">
-                                <thead>
-                                  <th>Starting Cash Amount</th>
-                                  <th>Date</th>
-                                  <th></th>
-                                </thead>
-                                <tbody>
-                                  {{#dbCashByUser}}
-                                  <tr>
-                                    <td>${{amount}}</td>
-                                    <td>{{date}}</td>
-                                  </tr>
-                                    <tr>
-                                      <form action="/api/cash/update/{{id}}" method="POST">
-                                        <input name="amount" type="text" placeholder="Change your Cash Starting Amount">
-                                        <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
-                                      </form>
-                                    </tr>
-                                  {{/dbCashByUser}}
-                                </tbody>
-                              </table>
+                <table id="cashtbl">
+                  <thead>
+                    <th>Starting Cash Amount</th>
+                    <th>Date Created</th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    {{#dbCashByUser}}
+                    <tr>
+                      <td>${{amount}}</td>
+                      <td>{{date}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                <h5>Change Your Cash Starting Amount</h5>
+                <form action="/api/cash/update/{{id}}" method="POST">
+                  <input name="amount" type="text" placeholder="Change your Cash Starting Amount">
+                  <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
+                </form>
+
+
+                {{/dbCashByUser}}
+
               </div>
             </div>
           </div>
         </div>
+        <!-- END CASH EDIT/INFO -->
 
-        
 
-        <!-- Company Info -->
+        <!-- START COMPANY INFO -->
         <div id="company" class="modal">
           <div class="modal-content">
             <div class="card-panel">
@@ -186,69 +181,10 @@
             </div>
           </div>
         </div>
+        <!-- START COMPANY INFO -->
 
 
-        <!-- Table Modal -->
-        <div id="browse" class="modal">
-          <div class="modal-content">
-            {{!-- <form action=""> --}}
-              <h4>Expenses</h4>
-              <table id="exptbl">
-                <thead>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th></th>
-              </thead>
-              <tbody>
-                {{#each dbExpenseByUser}}
-                <tr>
-                  <td>{{category}}</td>
-                  <td>${{amount}}</td>
-                  <td>{{date}}</td>
-                  <td>  
-                      <form action="/api/expenses/{{id}}" method="POST">
-                      <input type="hidden">
-                    <button>Delete</button> 
-                    </form>
-                    </td>
-                </tr>
-                {{/each}}
-              </tbody>
-              </table>
-              <p></p>
-              <h4>Income</h4>
-              <table id="inctbl">
-                <thead>
-                  <th>Customer</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                  <th></th>
-                </thead>
-                <tbody>
-                  {{#each dbIncomeByUser}}
-                  <tr>
-                    <td>{{customer}}</td>
-                    <td>${{amount}}</td>
-                    <td>{{date}}</td>
-                    <td>
-                      <form action="/api/incomes/{{id}}" method="POST">
-                      <input type="hidden">
-                      <button>Delete</button>
-                      </form>
-                    </td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-              <input href="#!" id="itblbtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
-            {{!-- </form> --}}
-          </div>
-        </div>
-
-       
-
-        <!-- Expenses -->
+        <!-- START EDIT EXPENSE -->
         <div id="expenses" class="modal">
           <div class="modal-content">
             <h4>Add New</h4>
@@ -268,16 +204,42 @@
               <p>Expense Category:
                 <input name="expensecat" type="text" placeholder="Misc">
               </p>
-              <input href="#!" id="expensebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
+              <input href="#!" id="expensebtn" class="modal-close waves-effect waves-light grey lighten-1" type="submit" value="Submit">
             </form>
+            <br>
+            <h4>Delete Expenses</h4>
+            <table id="exptbl">
+              <thead>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date Created</th>
+                <th></th>
+              </thead>
+              <tbody>
+                {{#each dbExpenseByUser}}
+                <tr>
+                  <td>{{category}}</td>
+                  <td>${{amount}}</td>
+                  <td>{{date}}</td>
+                  <td>
+                    <form action="/api/expenses/{{id}}" method="POST">
+                      <input type="hidden">
+                      <button class="waves-effect waves-light grey lighten-1">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
           </div>
 
         </div>
+        <!-- END EDIT EXPENSE -->
 
-        <!-- Income -->
+        <!-- START EDIT INCOME -->
         <div id="income" class="modal">
           <div class="modal-content">
-            <h4>Add New</h4>
+            <h4>Add New Income</h4>
             <form method="post" action="/api/incomes">
               <p>Income Amount ($):
                 <input name="incomeamt" type="text" placeholder="10000">
@@ -291,14 +253,40 @@
               <p>Income Description:
                 <input name="incomedesc" type="text" placeholder="Web Services">
               </p>
-              <input href="#!" id="incomebtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
+              <input href="#!" id="incomebtn" class="modal-close waves-effect waves-light grey lighten-1" type="submit" value="Submit">
             </form>
+            <br>
+            <h4>Delete Income</h4>
+            <table id="inctbl">
+              <thead>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Date Created</th>
+                <th></th>
+              </thead>
+              <tbody>
+                {{#each dbIncomeByUser}}
+                <tr>
+                  <td>{{customer}}</td>
+                  <td>${{amount}}</td>
+                  <td>{{date}}</td>
+                  <td>
+                    <form action="/api/incomes/{{id}}" method="POST">
+                      <input type="hidden">
+                      <button class="waves-effect waves-light grey lighten-1">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
           </div>
         </div>
-
+        <!-- END EDIT INCOME -->
+        <!-- END OF MODALS -->
 
       </div>
-      <!--end container-->
+      <!--END CONTAINER-->
     </section>
     <!-- END CONTENT -->
   </div>
