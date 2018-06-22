@@ -48,9 +48,8 @@ module.exports = function (app) {
     });
 
     app.post("/api/cash/update/:id", function(req, res) {
-
+        console.log(req.body.amount);
         db.Cash.update({
-            attributes: ['UserId', [db.sequelize.fn('SUM', db.sequelize.col('amount')), 'amount']],
             amount: req.body.amount
           }, {
             where: {

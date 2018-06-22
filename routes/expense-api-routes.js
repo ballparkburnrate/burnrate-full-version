@@ -68,8 +68,7 @@ module.exports = function (app) {
         });
     });
 
-<<<<<<< HEAD
-    app.delete("/api/expenses/:id", function(req, res) {
+    app.post("/api/expenses/:id", function(req, res) {
         console.log("ID *******",req.params.id);
         db.Expense.destroy({
           where: {
@@ -77,23 +76,7 @@ module.exports = function (app) {
           }
         })
           .then(function(dbExpense) {
-            res.json(dbExpense);
+            res.redirect("/index");
           });
       });
 };
-=======
-
-    app.post("/api/expenses/delete/:id", function (req, res) {
-
-        db.Expense.destroy({
-            where: {
-                id: req.body.id
-              }
-        }).then(function (dbExpense) {
-            console.log("Expense Deleted.")
-            res.redirect("/index");
-        });
-    });
-};
-
->>>>>>> 132efdcb56881475394700c48a520f53c7f75381

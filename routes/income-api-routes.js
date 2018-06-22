@@ -68,14 +68,15 @@ module.exports = function (app) {
     });
 
 
-    app.delete("/api/incomes/:id", function(req, res) {
+    app.post("/api/incomes/:id", function(req, res) {
         db.Income.destroy({
           where: {
             id: req.params.id
           }
         })
           .then(function(dbIncome) {
-            res.json(dbIncome);
+            res.redirect("/index")
+            console.log("Deleted");
           });
       });
 };

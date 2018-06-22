@@ -136,7 +136,29 @@
             <p>Starting Cash Amount</p>
             <div class="card-panel">
               <div class="card-content">
-                <form action="/api/cash/update{{this.id}}" method="POST">
+                              {{!-- <table id="cashtbl">
+                                <thead>
+                                  <th>Starting Cash Amount</th>
+                                  <th>Date</th>
+                                  <th></th>
+                                </thead>
+                                <tbody>
+                                  {{#each dbExpenseByUser}}
+                                  <tr>
+                                    <td>{{category}}</td>
+                                    <td>${{amount}}</td>
+                                    <td>{{date}}</td>
+                                    <td>
+                                      <form action="/api/expenses/{{id}}" method="POST">
+                                        <input type="hidden">
+                                        <button>Delete</button>
+                                      </form>
+                                    </td>
+                                  </tr>
+                                  {{/each}}
+                                </tbody>
+                              </table> --}}
+                <form action="/api/cash/update/{{id}}" method="POST">
                   <input name="amount" type="text" placeholder="100000">
                   <button class="modal-close waves-effect waves-light btn-flat" type="submit">Submit!</button>
                 </form>
@@ -187,10 +209,13 @@
                 {{#each dbExpenseByUser}}
                 <tr>
                   <td>{{category}}</td>
-                  <td>{{amount}}</td>
+                  <td>${{amount}}</td>
                   <td>{{date}}</td>
                   <td>  
-                    <button data-id="{{this.id}}" id="deleteExpense">Delete</button> 
+                      <form action="/api/expenses/{{id}}" method="POST">
+                      <input type="hidden">
+                    <button>Delete</button> 
+                    </form>
                     </td>
                 </tr>
                 {{/each}}
@@ -199,7 +224,27 @@
               <p></p>
               <h4>Income</h4>
               <table id="inctbl">
-
+                <thead>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  {{#each dbIncomeByUser}}
+                  <tr>
+                    <td>{{customer}}</td>
+                    <td>${{amount}}</td>
+                    <td>{{date}}</td>
+                    <td>
+                      <form action="/api/incomes/{{id}}" method="POST">
+                      <input type="hidden">
+                      <button>Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                  {{/each}}
+                </tbody>
               </table>
               <input href="#!" id="itblbtn" class="modal-close waves-effect waves-light btn-flat" type="submit" value="Submit">
             {{!-- </form> --}}
